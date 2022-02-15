@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace TodoMinimalAPI.Data;
+
 public class TodoDBContext : DbContext
 {
     public DbContextOptions<TodoDBContext> Context { get; }
