@@ -7,12 +7,12 @@ services:
     #   dockerfile: "./Dockerfile-dev"
     #   context: ./T/
     command: >
-      sh -c "cd /app && 
+      sh -c "cd /app/TodoMinimalAPI && 
             dotnet dev-certs https --trust && 
             dotnet restore &&
             dotnet run"
     volumes:
-      - './TodoMinimalAPI/:/app'
+      - './:/app'
     ports:
       - 4000:4000
       - 4001:4001
