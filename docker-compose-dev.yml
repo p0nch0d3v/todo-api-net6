@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app:
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    # build:
+    #   dockerfile: "./Dockerfile-dev"
+    #   context: ./T/
+    command: >
+      sh -c "cd /app/TodoMinimalAPI && 
+            dotnet dev-certs https --trust && 
+            dotnet restore &&
+            dotnet run"
+    volumes:
+      - './:/app'
+    ports:
+      - 4000:4000
+      - 4001:4001
+    environment:
+      'ASPNETCORE_HTTPS_PORT': '4001'
+      'ASPNETCORE_URLS': 'http://+:4000;https://+:4001'
+      'ASPNETCORE_ENVIRONMENT': 'Development'
