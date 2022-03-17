@@ -16,3 +16,21 @@ dotnet run
 And browse to `https://localhost:4001/swagger/index.html`:
 
 ![scrrenshot](./README.assets/ScreenShot.png)
+
+---
+## How it was started ?
+Create the directory
+```
+mkdir todo-api-net6
+cd todo-api-net6
+```
+Create the solution
+```
+dotnet new sln --name 'todo-api-net6'
+```
+Create the project
+```
+dotnet new webapi --use-minimal-apis --name 'todo-api-net6'
+dotnet sln add todo-api-net6
+```
+The rest is history ....
